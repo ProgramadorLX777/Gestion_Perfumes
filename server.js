@@ -1,82 +1,58 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const path = require("path");
+require("dotenv").config();
+
 const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// 🔥 SERVIR TU FRONTEND
+app.use(express.static(path.join(__dirname, "frontend")));
+
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(express.static('frontend'));
+// ✅ UNA SOLA CONEXIÓN
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("Mongo conectado"))
+    .catch(err => console.log(err));
 
-// Crear / conectar base de datos
-const db = new sqlite3.Database('./database.db');
-
-// Crear tabla si no existe
-db.run(`
-CREATE TABLE IF NOT EXISTS pedidos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    codigo_perfume TEXT,
-    nombre_perfume TEXT,
-    nombre_disenador TEXT,
-    cantidad_ml INTEGER,
-    nombre_cliente TEXT
-)
-`);
-
-// Obtener pedidos
-app.get('/pedidos', (req, res) => {
-    db.all("SELECT * FROM pedidos", [], (err, rows) => {
-        if (err) {
-            return res.status(500).json(err);
-        }
-        res.json(rows);
-    });
+// 🧱 MODELO
+const Pedido = mongoose.model("Pedido", {
+    codigo_perfume: String,
+    nombre_perfume: String,
+    nombre_disenador: String,
+    cantidad_ml: Number,
+    nombre_cliente: String
 });
 
-// Crear pedido
-app.post('/pedidos', (req, res) => {
-    const { codigo_perfume, nombre_perfume, nombre_disenador, cantidad_ml, nombre_cliente } = req.body;
-
-    db.run(
-        `INSERT INTO pedidos (codigo_perfume, nombre_perfume, nombre_disenador, cantidad_ml, nombre_cliente)
-         VALUES (?, ?, ?, ?, ?)`,
-        [codigo_perfume, nombre_perfume, nombre_disenador, cantidad_ml, nombre_cliente],
-        function (err) {
-            if (err) {
-                return res.status(500).json(err);
-            }
-            res.json({ id: this.lastID });
-        }
-    );
+// 📥 GET
+app.get("/pedidos", async (req, res) => {
+    const pedidos = await Pedido.find();
+    res.json(pedidos);
 });
 
-// Eliminar pedido
-app.delete('/pedidos/:id', (req, res) => {
-    db.run("DELETE FROM pedidos WHERE id = ?", [req.params.id], function (err) {
-        if (err) {
-            return res.status(500).json(err);
-        }
-        res.json({ mensaje: "Eliminado" });
-    });
+// ➕ POST
+app.post("/pedidos", async (req, res) => {
+    const nuevo = new Pedido(req.body);
+    await nuevo.save();
+    res.json(nuevo);
 });
 
-// Actualizar pedido
-app.put('/pedidos/:id', (req, res) => {
-    const { codigo_perfume, nombre_perfume, nombre_disenador, cantidad_ml, nombre_cliente } = req.body;
-
-    db.run(
-        `UPDATE pedidos 
-         SET codigo_perfume = ?, nombre_perfume = ?, nombre_disenador = ?, cantidad_ml = ?, nombre_cliente = ?
-         WHERE id = ?`,
-        [codigo_perfume, nombre_perfume, nombre_disenador, cantidad_ml, nombre_cliente, req.params.id],
-        function (err) {
-            if (err) {
-                return res.status(500).json(err);
-            }
-            res.json({ mensaje: "Actualizado" });
-        }
-    );
+// ❌ DELETE
+app.delete("/pedidos/:id", async (req, res) => {
+    await Pedido.findByIdAndDelete(req.params.id);
+    res.json({ mensaje: "Eliminado" });
 });
 
-// Servidor en red
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor corriendo con base de datos 🚀`);
+// ✏️ UPDATE
+app.put("/pedidos/:id", async (req, res) => {
+    await Pedido.findByIdAndUpdate(req.params.id, req.body);
+    res.json({ mensaje: "Actualizado" });
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log("Servidor corriendo en puerto " + PORT);
 });
