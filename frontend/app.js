@@ -99,3 +99,6 @@ async function eliminar(id) {
 }
 
 cargarPedidos();
+
+window.editar = editar;
+window.eliminar = eliminar;
