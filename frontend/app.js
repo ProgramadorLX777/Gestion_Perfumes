@@ -57,24 +57,45 @@ form.addEventListener("submit", async (e) => {
 
 // ✏️ Editar
 async function editar(id) {
-    const res = await fetch(API);
-    const data = await res.json();
+    try {
+        const res = await fetch(API);
+        const data = await res.json();
 
-    const p = data.find(x => x._id === id);
+        const p = data.find(x => x._id === id);
 
-    codigo.value = p.codigo_perfume;
-    nombre.value = p.nombre_perfume;
-    disenador.value = p.nombre_disenador;
-    ml.value = p.cantidad_ml;
-    cliente.value = p.nombre_cliente;
+        if (!p) {
+            alert("No se encontró el pedido");
+            return;
+        }
 
-    editandoId = id;
+        codigo.value = p.codigo_perfume;
+        nombre.value = p.nombre_perfume;
+        disenador.value = p.nombre_disenador;
+        ml.value = p.cantidad_ml;
+        cliente.value = p.nombre_cliente;
+
+        editandoId = id;
+
+    } catch (error) {
+        console.error("Error al editar:", error);
+    }
 }
 
 // ❌ Eliminar
 async function eliminar(id) {
-    await fetch(`${API}/${id}`, { method: "DELETE" });
-    cargarPedidos();
+    const confirmar1 = confirm("¿Seguro que quieres eliminar este pedido?");
+    if (!confirmar1) return;
+
+    const confirmar2 = confirm("Esta acción es permanente. ¿Eliminar?");
+    if (!confirmar2) return;
+
+    try {
+        await fetch(`${API}/${id}`, { method: "DELETE" });
+        cargarPedidos();
+    } catch (error) {
+        console.error("Error al eliminar:", error);
+        alert("No se pudo eliminar");
+    }
 }
 
 cargarPedidos();
