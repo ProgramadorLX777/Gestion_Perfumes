@@ -53,6 +53,11 @@ app.put("/pedidos/:id", async (req, res) => {
     res.json({ mensaje: "Actualizado" });
 });
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
+
 app.listen(PORT, "0.0.0.0", () => {
     console.log("Servidor corriendo en puerto " + PORT);
 });
+
