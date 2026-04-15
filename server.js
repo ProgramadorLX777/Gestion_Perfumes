@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Mongo conectado"))
     .catch(err => {
         console.error("❌ Error Mongo:", err);
-        process.exit(1); // 🔥 evita que Render quede colgado
+        process.exit(1);
     });
 
 // 🧱 Modelo
@@ -30,7 +30,7 @@ const Pedido = mongoose.model("Pedido", {
     nombre_disenador: String,
     cantidad_ml: Number,
     nombre_cliente: String,
-    tipo: String // 🔥 importante porque lo agregaste
+    tipo: String
 });
 
 // 📥 GET
@@ -74,8 +74,8 @@ app.delete("/pedidos/:id", async (req, res) => {
     }
 });
 
-// 🔥 IMPORTANTE: SIEMPRE AL FINAL
-app.get("/*", (req, res) => {
+// 🔥 RUTA RAÍZ (IMPORTANTE)
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
