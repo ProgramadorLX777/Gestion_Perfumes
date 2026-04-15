@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos de Perfumes</title>
+    <title>Agenda de Perfumes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,20 +13,39 @@
     <h2>📦 Pedidos de Perfumes</h2>
 
     <form id="formPedido">
-        <input type="text" id="codigo" placeholder="Código" required>
-        <input type="text" id="nombre" placeholder="Nombre perfume" required>
-        <input type="text" id="disenador" placeholder="Diseñador" required>
-        <input type="number" id="ml" placeholder="ML" required>
-        <input type="text" id="cliente" placeholder="Cliente" required>
-        <button type="submit">Guardar</button>
+
+        <!-- 🔥 NUEVO: tipo -->
+        <select id="tipo" required>
+            <option value="">Seleccione género:</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+
+        <!-- 🔥 ahora es select -->
+        <select id="codigo" required>
+            <option value="">Seleccione perfume:</option>
+        </select>
+
+        <input type="text" id="nombre" placeholder="Nombre perfume" readonly>
+        <input type="text" id="disenador" placeholder="Diseñador (Marca perfume)" readonly>
+        <select id="ml" required>
+            <option value="">Seleccione tamaño:</option>
+            <option value="50">50 ml</option>
+            <option value="100">100 ml</option>
+        </select>
+        <input type="text" id="cliente" placeholder="Nombre cliente" required>
+
+        <button type="submit">Guardar fragancia</button>
     </form>
+
+    <div id="mensaje"></div>
 
     <hr>
 
     <h3>Lista de pedidos</h3>
     <ul id="listaPedidos"></ul>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
