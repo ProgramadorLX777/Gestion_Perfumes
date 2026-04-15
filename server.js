@@ -75,7 +75,7 @@ app.delete("/pedidos/:id", async (req, res) => {
 });
 
 // 🔥 IMPORTANTE: SIEMPRE AL FINAL
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
