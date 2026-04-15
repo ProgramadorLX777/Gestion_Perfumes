@@ -14,12 +14,23 @@ async function cargarPedidos() {
 
     data.forEach(p => {
         const li = document.createElement("li");
+
         li.innerHTML = `
-            <strong>${p.nombre_perfume}</strong> (${p.cantidad_ml}ml)<br>
-            ${p.nombre_disenador} - Cliente: ${p.nombre_cliente}<br>
-            <button onclick="editar('${p._id}')">Editar</button>
-            <button onclick="eliminar('${p._id}')">Eliminar</button>
-        `;
+        <strong>${p.nombre_perfume}</strong> (${p.cantidad_ml}ml)<br>
+        ${p.nombre_disenador} - Cliente: ${p.nombre_cliente}<br>
+    `;
+
+        const btnEditar = document.createElement("button");
+        btnEditar.textContent = "Editar";
+        btnEditar.addEventListener("click", () => editar(p._id));
+
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+        btnEliminar.addEventListener("click", () => eliminar(p._id));
+
+        li.appendChild(btnEditar);
+        li.appendChild(btnEliminar);
+
         lista.appendChild(li);
     });
 }
