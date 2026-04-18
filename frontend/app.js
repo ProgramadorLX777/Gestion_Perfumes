@@ -119,7 +119,7 @@ const perfumes = [
     { codigo: "H105", nombre: "Code Elixir", disenador: "Giorgio Armani", tipo: "masculino" },
     { codigo: "H106", nombre: "Boss Bottled Citrus", disenador: "Hugo Boss", tipo: "masculino" },
     { codigo: "H107", nombre: "Prada L'Homme", disenador: "Prada", tipo: "masculino" },
-    { codigo: "H108", nombre: "Super X", disenador: "Chanel", tipo: "masculino" },
+    { codigo: "H108", nombre: "Super X", disenador: "Desconocido", tipo: "masculino" },
     { codigo: "H109", nombre: "Hero Parfum", disenador: "Burberry", tipo: "masculino" },
     { codigo: "H110", nombre: "Stronger With You Parfum", disenador: "Emporio Armani", tipo: "masculino" },
 
@@ -136,8 +136,144 @@ const perfumes = [
     { codigo: "H121", nombre: "Asad Zansibar", disenador: "Lattafa", tipo: "masculino" },
 
     // 👩 Femeninos
-    { codigo: "F001", nombre: "La Vie Est Belle", disenador: "Lancôme", tipo: "femenino" },
-    { codigo: "F002", nombre: "Good Girl", disenador: "Carolina Herrera", tipo: "femenino" }
+    { codigo: "M1", nombre: "Light Blue Woman", disenador: "Dolce & Gabbana", tipo: "femenino" },
+    { codigo: "M2", nombre: "Black Opium", disenador: "YvesSaintLaurent", tipo: "femenino" },
+    { codigo: "M3", nombre: "La Vie Est Belle", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M4", nombre: "La Vie Est Belle Soleil", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M5", nombre: "Fame Intense", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M6", nombre: "La Nuit Tresor", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M7", nombre: "Burberry Her Intense", disenador: "Burberry", tipo: "femenino" },
+    { codigo: "M8", nombre: "Coco Mademoiselle", disenador: "Chanel", tipo: "femenino" },
+    { codigo: "M9", nombre: "Bright Cristal", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M10", nombre: "Dylan Turquoise", disenador: "Versace", tipo: "femenino" },
+
+    { codigo: "M11", nombre: "Angel", disenador: "Mugler", tipo: "femenino" },
+    { codigo: "M12", nombre: "Tommy Girl", disenador: "Tommy Hilfiger", tipo: "femenino" },
+    { codigo: "M13", nombre: "Si", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M14", nombre: "Fantasy", disenador: "Britney Spears", tipo: "femenino" },
+    { codigo: "M15", nombre: "Amor Amor", disenador: "Cacharel", tipo: "femenino" },
+    { codigo: "M16", nombre: "Tresor (Normal)", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M17", nombre: "Carolina Herrera", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M18", nombre: "212 Sexy", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M19", nombre: "212 NYC (Woman)", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M20", nombre: "Flower Bomb", disenador: "Viktor & Rolf", tipo: "femenino" },
+
+    { codigo: "M21", nombre: "Olympea", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M22", nombre: "Alien Hypersense", disenador: "Mugler", tipo: "femenino" },
+    { codigo: "M23", nombre: "Flower de Kenzo", disenador: "Kenzo", tipo: "femenino" },
+    { codigo: "M24", nombre: "My Way", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M25", nombre: "Idole Nectar", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M26", nombre: "Black Opium OverRed", disenador: "YvesSaintLaurent", tipo: "femenino" },
+    { codigo: "M27", nombre: "Flower Bomb Extreme", disenador: "Viktor & Rolf", tipo: "femenino" },
+    { codigo: "M28", nombre: "Toy 2 Bubblegum", disenador: "Moschino", tipo: "femenino" },
+    { codigo: "M29", nombre: "Chanel N°5", disenador: "Chanel", tipo: "femenino" },
+    { codigo: "M30", nombre: "Irresistible", disenador: "Givenchy", tipo: "femenino" },
+
+    { codigo: "M31", nombre: "Q", disenador: "Dolce & Gabbana", tipo: "femenino" },
+    { codigo: "M32", nombre: "J'adore", disenador: "Dior", tipo: "femenino" },
+    { codigo: "M33", nombre: "Halloween Woman", disenador: "Jesús del Pozo", tipo: "femenino" },
+    { codigo: "M34", nombre: "Mod Vanilla", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M35", nombre: "Good Girl", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M36", nombre: "Be Delicious", disenador: "Donna Karan DNKY", tipo: "femenino" },
+    { codigo: "M37", nombre: "Marshmallow", disenador: "Desconocido", tipo: "femenino" },
+    { codigo: "M38", nombre: "212 Héroes Forever Young", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M39", nombre: "Big Pony 2", disenador: "Ralph Lauren", tipo: "femenino" },
+    { codigo: "M40", nombre: "Thank U Next", disenador: "Ariana Grande", tipo: "femenino" },
+
+    { codigo: "M41", nombre: "Poison Girl", disenador: "Dior", tipo: "femenino" },
+    { codigo: "M42", nombre: "Eternity", disenador: "Calvin Klein", tipo: "femenino" },
+    { codigo: "M43", nombre: "Sweet Like Candy", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M44", nombre: "Eros Pour Femme", disenador: "Versace", tipo: "femenino" },
+    { codigo: "M45", nombre: "Burberry Her Elixir", disenador: "Burberry", tipo: "femenino" },
+    { codigo: "M46", nombre: "Ralph (Woman)", disenador: "Ralph Lauren", tipo: "femenino" },
+    { codigo: "M47", nombre: "Can Can", disenador: "Paris Hilton", tipo: "femenino" },
+    { codigo: "M48", nombre: "Libre Intense", disenador: "YvesSaintLaurent", tipo: "femenino" },
+    { codigo: "M49", nombre: "Bright Cristal Absolu", disenador: "Versace", tipo: "femenino" },
+    { codigo: "M50", nombre: "CK One", disenador: "Calvin Klein", tipo: "femenino" },
+
+    { codigo: "M51", nombre: "XS Pure Woman", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M52", nombre: "My Way Intense", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M53", nombre: "Black XS Woman (2007)", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M54", nombre: "Burberry Woman (Clásico)", disenador: "Burberry", tipo: "femenino" },
+    { codigo: "M55", nombre: "Fame", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M56", nombre: "La Belle", disenador: "Jean Paul Gaultier", tipo: "femenino" },
+    { codigo: "M57", nombre: "Chance Eau Tendre", disenador: "Chanel", tipo: "femenino" },
+    { codigo: "M58", nombre: "Coconut Passion", disenador: "Victoria's Secret", tipo: "femenino" },
+    { codigo: "M59", nombre: "When in Rio", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M60", nombre: "Lady Million Royal", disenador: "Paco Rabanne", tipo: "femenino" },
+
+    { codigo: "M61", nombre: "Libre", disenador: "YvesSaintLaurent", tipo: "femenino" },
+    { codigo: "M62", nombre: "Acqua di Gio Woman", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M63", nombre: "Mod Blush", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M64", nombre: "My Way Nectar", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M65", nombre: "Peaches", disenador: "Desconocido", tipo: "femenino" },
+    { codigo: "M66", nombre: "Devotion", disenador: "Dolce & Gabbana", tipo: "femenino" },
+    { codigo: "M67", nombre: "Ralph Love", disenador: "Ralph Lauren", tipo: "femenino" },
+    { codigo: "M68", nombre: "Acqua di Gioia", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M69", nombre: "Lolita Lempicka", disenador: "Lolita Lempicka", tipo: "femenino" },
+    { codigo: "M70", nombre: "Very Good Girl", disenador: "Carolina Herrera", tipo: "femenino" },
+
+    { codigo: "M71", nombre: "212 VIP", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M72", nombre: "212 VIP Rosé", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M73", nombre: "CH Woman (2007)", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M74", nombre: "Scandal (Normal)", disenador: "Jean Paul Gaultier", tipo: "femenino" },
+    { codigo: "M75", nombre: "Because it's You", disenador: "Giorgio Armani", tipo: "femenino" },
+    { codigo: "M76", nombre: "Lady Million", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M77", nombre: "Idole (Normal)", disenador: "Lancôme", tipo: "femenino" },
+    { codigo: "M78", nombre: "Cloud Intense", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M79", nombre: "Cloud Pink", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M80", nombre: "R.E.M", disenador: "Ariana Grande", tipo: "femenino" },
+
+    { codigo: "M81", nombre: "God is Woman", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M82", nombre: "Scandal By Night", disenador: "Jean Paul Gaultier", tipo: "femenino" },
+    { codigo: "M83", nombre: "Cloud (Normal)", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M84", nombre: "Burberry Goddess", disenador: "Burberry", tipo: "femenino" },
+    { codigo: "M85", nombre: "Miss Dior (Normal)", disenador: "Dior", tipo: "femenino" },
+    { codigo: "M86", nombre: "Divine", disenador: "Jean Paul Gaultier", tipo: "femenino" },
+    { codigo: "M87", nombre: "Angel Nova", disenador: "Mugler", tipo: "femenino" },
+    { codigo: "M88", nombre: "Donna Born in Roma", disenador: "Valentino", tipo: "femenino" },
+    { codigo: "M89", nombre: "Paradoxe", disenador: "Prada", tipo: "femenino" },
+    { codigo: "M90", nombre: "Burberry Her (Normal)", disenador: "Burberry", tipo: "femenino" },
+
+    { codigo: "M91", nombre: "Toy 2 Pearl", disenador: "Moschino", tipo: "femenino" },
+    { codigo: "M92", nombre: "L'interdit Rouge EDP", disenador: "Givenchy", tipo: "femenino" },
+    { codigo: "M93", nombre: "The Scent for Her", disenador: "Hugo Boss", tipo: "femenino" },
+    { codigo: "M94", nombre: "Valentino Donna Coral Fantasy", disenador: "Valentino", tipo: "femenino" },
+    { codigo: "M95", nombre: "Yara Candy", disenador: "Lattafa", tipo: "femenino" },
+    { codigo: "M96", nombre: "Yara Tous", disenador: "Lattafa", tipo: "femenino" },
+    { codigo: "M97", nombre: "Yara Moi", disenador: "Lattafa", tipo: "femenino" },
+    { codigo: "M98", nombre: "Issey Miyake Woman", disenador: "Issey Miyake", tipo: "femenino" },
+    { codigo: "M99", nombre: "Lady Million Gold", disenador: "Paco Rabanne", tipo: "femenino" },
+    { codigo: "M100", nombre: "La Vie Est Belle L'Elixir", disenador: "Lancôme", tipo: "femenino" },
+
+    { codigo: "M101", nombre: "Good Girl Blush", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M102", nombre: "Sol de Janeiro 40", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M103", nombre: "Sol de Janeiro 71", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M104", nombre: "Sol de Janeiro 68", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M105", nombre: "Goodess Intense", disenador: "Burberry", tipo: "femenino" },
+    { codigo: "M106", nombre: "Sol de Janeiro 62", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M107", nombre: "Sol de Janeiro 59", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M108", nombre: "Sweet Tooth (Normal)", disenador: "Sabrina Carpenter", tipo: "femenino" },
+    { codigo: "M109", nombre: "Sweet Tooth Cherry Baby", disenador: "Sabrina Carpenter", tipo: "femenino" },
+    { codigo: "M110", nombre: "Sweet Tooth Caramel Dream", disenador: "Sabrina Carpenter", tipo: "femenino" },
+
+    { codigo: "M111", nombre: "Sweet Tooth Expreso", disenador: "Sabrina Carpenter", tipo: "femenino" },
+    { codigo: "M112", nombre: "Vanilla Suede", disenador: "Ariana Grande", tipo: "femenino" },
+    { codigo: "M113", nombre: "Miami Shake", disenador: "Juliette Has a Gun", tipo: "femenino" },
+    { codigo: "M114", nombre: "Yara (Normal)", disenador: "Lattafa", tipo: "femenino" },
+    { codigo: "M115", nombre: "Agua Mística", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M116", nombre: "Dança Mística", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M117", nombre: "Flor Mística", disenador: "Sol de Janeiro", tipo: "femenino" },
+    { codigo: "M118", nombre: "Ex Vetiver", disenador: "Juliette Has a Gun", tipo: "femenino" },
+    { codigo: "M119", nombre: "Duende", disenador: "Jesús del Pozo", tipo: "femenino" },
+    { codigo: "M120", nombre: "Scandal Intense", disenador: "Jean Paul Gaultier", tipo: "femenino" },
+
+    { codigo: "M121", nombre: "Ella Ella", disenador: "Cacharel", tipo: "femenino" },
+    { codigo: "M122", nombre: "L'Interdit Angelique Rouge", disenador: "Givenchy", tipo: "femenino" },
+    { codigo: "M123", nombre: "La Bomba", disenador: "Carolina Herrera", tipo: "femenino" },
+    { codigo: "M124", nombre: "Chance Eau Splendide", disenador: "Chanel", tipo: "femenino" },
+    { codigo: "M125", nombre: "Gingembre Rouge", disenador: "Roger & Gallet", tipo: "femenino" },
+    { codigo: "M126", nombre: "Valentino Donna Extradose Born in Roma", disenador: "Valentino", tipo: "femenino" }
 
 ];
 
@@ -203,10 +339,12 @@ async function cargarPedidos() {
 
         const btnEditar = document.createElement("button");
         btnEditar.textContent = "Editar";
+        btnEditar.classList.add("btn-editar"); // 🔥 aquí
         btnEditar.addEventListener("click", () => editar(p._id));
 
         const btnEliminar = document.createElement("button");
         btnEliminar.textContent = "Eliminar";
+        btnEliminar.classList.add("btn-eliminar"); // 🔥 aquí
         btnEliminar.addEventListener("click", () => eliminar(p._id));
 
         li.appendChild(btnEditar);

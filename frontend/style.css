@@ -60,3 +60,35 @@ li {
     background: #f8d7da;
     color: #721c24;
 }
+
+/* 🟢 Guardar */
+.btn-guardar {
+    background: #28a745;
+}
+
+/* 🟠 Editar */
+.btn-editar {
+    background: #fd7e14;
+}
+
+/* 🔴 Eliminar */
+.btn-eliminar {
+    background: #dc3545;
+}
+
+/* 🔥 Hover (efecto bonito) */
+.btn-guardar:hover {
+    background: #218838;
+}
+
+.btn-editar:hover {
+    background: #e8590c;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+button {
+    margin-top: 5px;
+}
